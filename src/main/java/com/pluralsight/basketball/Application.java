@@ -68,7 +68,7 @@ public class Application {
         people.stream()
                 .filter((person) -> person.getLastName().contains(lastName))
                 .forEach(person -> System.out.println(person));
-        return people;
+        return matchingPeople;
     }
 
     private static List<Person> getPeople() {
