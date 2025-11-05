@@ -1,4 +1,4 @@
-package com.pluralsight;
+package com.pluralsight.movie;
 
 public class Movie {
     private String title;
