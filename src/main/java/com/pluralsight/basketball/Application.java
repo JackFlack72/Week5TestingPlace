@@ -82,6 +82,8 @@ public class Application {
         people.add(new Person("Jimmy", "Butler", 34));
         people.add(new Person("Kawhi", "Leonard", 32));
         people.add(new Person("Devin", "Booker", 27));
+        people.add(new Person("Tyrese", "Haliburton", 25));
+
 
         // Duplicate last names
         people.add(new Person("Jalen", "Williams", 23));
