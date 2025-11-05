@@ -26,8 +26,15 @@ public class MovieApplication {
         System.out.println();
 
         //filtering with streams
-
-
+        System.out.println("Movies rated 8.0 or higher:");
+//        for (Movie movie : movies) {
+//            if (movie.getRating() >= 8.0) {
+//                System.out.println(movie);
+//            }
+//        }
+        movies.stream()
+                .filter((movie) -> movie.getRating() >= 8)
+                .forEach(movie -> System.out.println(movie));
 
     }
 
