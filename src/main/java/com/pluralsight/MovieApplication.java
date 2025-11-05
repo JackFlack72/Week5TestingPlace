@@ -1,4 +1,3 @@
-
 package com.pluralsight;
 
 import java.util.ArrayList;
@@ -8,9 +7,28 @@ public class MovieApplication {
 
     public static void main(String[] args) {
         List<Movie> movies = getMovies();
-        for (Movie movie: movies) {
-            System.out.println(movie);
+
+        //filtering without streams
+        System.out.println("Movies rated 8.0 or higher:");
+        for (Movie movie : movies) {
+            if (movie.getRating() >= 8.0) {
+                System.out.println(movie);
+            }
         }
+
+        System.out.println("\nAction movies released after 2022:");
+        for (Movie movie : movies) {
+            if (movie.getGenre().equals("Action") && movie.getReleaseYear() > 2022) {
+                System.out.println(movie);
+            }
+        }
+
+        System.out.println();
+
+        //filtering with streams
+
+
+
     }
 
     public static List<Movie> getMovies() {
