@@ -1,5 +1,6 @@
 package com.pluralsight.basketball;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -29,7 +30,6 @@ public class Application {
         //sort the people by age
 
 
-
     }
 
     private static List<Integer> getAges(List<Person> people) {
@@ -41,13 +41,20 @@ public class Application {
     }
 
     private static double getAverageAge(List<Person> people) {
-        int totalAge = 0;
-        for (Person person : people) {
-            // totalAge = totalAge + person.getAge();
-            totalAge += person.getAge();
-        }
-        double averageAge = (double) totalAge / people.size();
-        return averageAge;
+//        int totalAge = 0;
+//        for (Person person : people) {
+//            // totalAge = totalAge + person.getAge();
+//            totalAge += person.getAge();
+//        }
+//        double averageAge = (double) totalAge / people.size();
+//        return averageAge;
+
+        int totalAge = people.stream()
+                .map(person -> person.getAge())
+                .reduce(0, (total, age) -> total + age);
+
+        // 3. Manually perform the division
+        return (double) totalAge / people.size();
     }
 
     private static void printPeople(List<Person> people) {
