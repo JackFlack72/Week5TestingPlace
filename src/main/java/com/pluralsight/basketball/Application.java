@@ -59,12 +59,16 @@ public class Application {
     private static List<Person> getPeopleByLastName(List<Person> people, String lastName) {
         List<Person> matchingPeople = new ArrayList<>();
 
-        for (Person person : people) {
-            if(person.getLastName().equals(lastName)){
-                matchingPeople.add(person);
-            }
-        }
-        return matchingPeople;
+//        for (Person person : people) {
+//            if(person.getLastName().equals(lastName)){
+//                matchingPeople.add(person);
+//            }
+//        }
+//        return matchingPeople;
+        people.stream()
+                .filter((person) -> person.getLastName().contains(lastName))
+                .forEach(person -> System.out.println(person));
+        return people;
     }
 
     private static List<Person> getPeople() {
